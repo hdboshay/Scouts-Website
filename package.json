@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/hdboshay/Scouts-Website/issues"
   },
-  "homepage": "https://github.com/hdboshay/Scouts-Website#readme"
+  "homepage": "https://github.com/hdboshay/Scouts-Website#readme",
+  "dependencies": {
+    "package.json": "^2.0.1"
+  }
 }
