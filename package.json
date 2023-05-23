@@ -19,6 +19,10 @@
   },
   "homepage": "https://github.com/hdboshay/Scouts-Website#readme",
   "dependencies": {
-    "package.json": "^2.0.1"
+    "package.json": "^2.0.1",
+    "webpack": "^5.83.1"
+  },
+  "devDependencies": {
+    "webpack-cli": "^5.1.1"
   }
 }
