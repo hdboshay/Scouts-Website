@@ -130,16 +130,14 @@
         </div>
 
         <div class="row gy-4">
-          <p>
-            <?php echo "Hello World"
-              $files = scandir('assets/img/sections/scouts/photo dump/');
-              foreach($files as $file) {
-                  if($file !== "." && $file !== "..") {
-                    echo "<img src='$file' />";
-                    }?>
-                }?>
-            ?>
-          </p>
+          <?php echo "Hello World"
+            $files = scandir('assets/img/sections/scouts/photo dump/');
+            foreach($files as $file) {
+                if($file !== "." && $file !== "..") {
+                  echo "<img src="$file" class="img-fluid rounded-4" alt="" width="700" height="auto">";
+                  }?>
+              }?>
+          ?>
           <img src="assets/img/sections/scouts/photo dump/1C053A8E-A3C8-4195-8252-AC3A401D5DA9_1_105_c.jpeg" class="img-fluid rounded-4" alt="" width="700" height="auto">
           <p></p><img src="assets/img/sections/scouts/photo dump/2557952C-9E3E-4C83-8426-6FA754907D3A_1_105_c.jpeg" class="img-fluid rounded-4" alt="" width="700" height="auto">
           <p></p><img src="assets/img/sections/scouts/photo dump/2A0FF456-5B38-467D-BF86-453D0AA7C8BC_1_201_a.png" class="img-fluid rounded-4" alt="" width="700" height="auto">
