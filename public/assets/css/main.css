@@ -291,7 +291,7 @@ section {
   transition: all 0.5s;
   z-index: 997;
   height: 90px;
-  background-color: var(--color-primary);
+  background-color: #3f4349f7;
 }
 
 .header.sticked {
@@ -2122,10 +2122,12 @@ section {
 # Hero Section
 --------------------------------------------------------------*/
 .hero {
-  width: 100%;
-  position: relative;
-  background: var(--color-primary);
-  padding: 60px 0 0 0;
+  /*position: relative;*/
+  background:#e6080892;
+  background-image: url("https://thumbs.gfycat.com/AlienatedFluidIndianglassfish-max-1mb.gif"); 
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
 }
 
 @media (min-width: 1365px) {
@@ -2199,7 +2201,7 @@ section {
 }
 
 .hero .icon-boxes {
-  padding-bottom: 60px;
+  padding-bottom: 0px;
 }
 
 @media (min-width: 1200px) {
@@ -2215,10 +2217,10 @@ section {
 }
 
 .hero .icon-box {
-  padding: 60px 30px;
+  padding: 40px 20px;
   position: relative;
   overflow: hidden;
-  background: rgb(108, 117, 125);
+  background: rgba(108, 117, 125, 0.903);
   box-shadow: 0 0 29px 0 rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease-in-out;
   border-radius: 20px;
