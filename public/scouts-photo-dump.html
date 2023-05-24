@@ -130,13 +130,12 @@
         </div>
 
         <div class="row gy-4">
-          <?php
-              $files = scandir('assets/img/sections/scouts/photo dump/');
-              foreach($files as $file) {
-                  if($file !== "." && $file !== "..") {
-                      echo "<img src='$file' />";
-                  }
-              }
+          <?php $files = scandir('assets/img/sections/scouts/photo dump/');
+            <?php foreach($files as $file) {
+                <?php if($file !== "." && $file !== "..") {
+                  php echo "<img src='$file' />";
+                  }?>
+              }?>
           ?>
           <img src="assets/img/sections/scouts/photo dump/1C053A8E-A3C8-4195-8252-AC3A401D5DA9_1_105_c.jpeg" class="img-fluid rounded-4" alt="" width="700" height="auto">
           <p></p><img src="assets/img/sections/scouts/photo dump/2557952C-9E3E-4C83-8426-6FA754907D3A_1_105_c.jpeg" class="img-fluid rounded-4" alt="" width="700" height="auto">
