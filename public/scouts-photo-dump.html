@@ -130,9 +130,10 @@
         </div>
 
         <div class="row gy-4">
-          <?php $files = scandir('assets/img/sections/scouts/photo dump/');
-            <?php foreach($files as $file) {
-                <?php if($file !== "." && $file !== "..") {
+          <?php echo "Hello World"
+            $files = scandir('assets/img/sections/scouts/photo dump/');
+            foreach($files as $file) {
+                if($file !== "." && $file !== "..") {
                   echo "<img src='$file' />";
                   }?>
               }?>
