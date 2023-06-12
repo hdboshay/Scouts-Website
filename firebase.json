@@ -9,7 +9,10 @@
     "cleanUrls" : true,
 
     "rewrites": [ {
-      "source": "/cubs",
+      "source": "/beavers",
+      "destination": "/Beavers.html"
+    } , {
+      "source": "/Cubs",
       "destination": "/Cubs.html"
     } ]
   }
