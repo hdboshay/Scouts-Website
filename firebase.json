@@ -6,6 +6,11 @@
       "**/.*",
       "**/node_modules/**"
     ],
-    "cleanUrls" : true
+    "cleanUrls" : true,
+
+    "rewrites": [ {
+      "source": "/cubs",
+      "destination": "/Cubs.html"
+    } ]
   }
 }
