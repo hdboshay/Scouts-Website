@@ -12,8 +12,17 @@
       "source": "/beavers",
       "destination": "/Beavers.html"
     } , {
-      "source": "/Cubs",
+      "source": "/cubs",
       "destination": "/Cubs.html"
-    } ]
+    } , {
+      "source": "/scouts",
+      "destination": "/Scouts.html"
+    } , {
+      "source": "/senior scouts",
+      "destination": "/Senior Scouts.html"
+    } , {
+      "source": "/rovers",
+      "destination": "/Rovers.html"
+    }]
   }
 }
