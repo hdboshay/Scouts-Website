@@ -10,7 +10,6 @@
 	
 		<!-- Favicons -->
 		<link href="assets/img/B-PSA_Logo.png" rel="icon">
-		<link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 	
 		<!-- Google Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,59 +36,184 @@
 	</head>
 
 	<body>
+
+		<!-- ======= Header ======= -->
+		<header id="header" class="header d-flex align-items-center">
+			<div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+				<a href="index.html" class="logo d-flex align-items-center">
+				<!-- Uncomment the line below if you also wish to use an image logo -->
+				<img src="assets/img/B-PSA_Logo.png" alt=""> 
+				<h1 style = "font-size: large">1st Dullingham and Stetchworth B-P Scouts<span>.</span></h1>
+				</a>
+				<nav id="navbar" class="navbar">
+				<ul>
+					<li><a href="index.html#hero">Home</a></li>
+					<li><a href="index.html#about">About</a></li>
+					<li class="dropdown"><a href="index.html#sections"><span>Sections</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+					<ul>
+						<li class="dropdown"><a href="Beavers.html"><span>Beaver Scouts</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+						<ul>
+							<li><a href="Beavers.html#about">About Beavers</a></li>
+							<li><a href="Beavers.html#badges">Badge Positions</a></li>
+						</ul>
+						</li>
+						<li class="dropdown"><a href="Cubs.html"><span>Wolf Cubs</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+						<ul>
+							<li><a href="Cubs.html#about">About Cubs</a></li>
+							<li><a href="Cubs.html#badges">Badge Positions</a></li>
+							<li><a href="Cubs.html#programme">Programme</a></li>
+						</ul>
+						</li>
+						<li class="dropdown"><a href="Scouts.html"><span>Scouts</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+						<ul>
+							<li><a href="Scouts.html#about">About Scouts</a></li>
+							<li><a href="Scouts.html#badges">Badge Positions</a></li>
+							<li><a href="Scouts.html#programme">Programme</a></li>
+						</ul>
+						</li>
+						<li class="dropdown"><a href="Senior Scouts.html"><span>Senior Scouts</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+						<ul>
+							<li><a href="Senior Scouts.html#about">About Senior Scouts</a></li>
+							<li><a href="Senior Scouts.html#badges">Badge Positions</a></li>
+							<li><a href="Senior Scouts.html#rucksack">Packing A Rucksack</a></li>
+						</ul>
+						</li>
+						<li><a href="Rovers.html">Rover Crew</a></li>
+					</ul>
+					</li>
+					<li><a href="index.html#leaders">Our Leaders</a></li>
+					<li><a href="index.html#history">History</a></li>
+					<li><a href="index.html#volunteer">Volunteering</a></li>
+					<li><a href="index.html#faqs">FAQs</a></li>
+					<li><a href="index.html#contact">Contact Us</a></li>
+				</ul>
+				</nav><!-- .navbar -->
 		
-		<div class="limiter">
-			<div class="container-login100" style="background-image: url('assets/img/bg-01.jpg');">
-				<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
-					<form class="login100-form validate-form">
-						<span class="login100-form-title p-b-49">
-							Login
-						</span>
-
-						<div class="wrap-input100 validate-input m-b-23" data-validate = "Username is reauired">
-							<span class="label-input100">Username</span>
-							<input class="input100" type="text" name="username" placeholder="Type your username">
-							<span class="focus-input100" data-symbol="&#xf206;"></span>
-						</div>
-
-						<div class="wrap-input100 validate-input" data-validate="Password is required">
-							<span class="label-input100">Password</span>
-							<input class="input100" type="password" name="pass" placeholder="Type your password">
-							<span class="focus-input100" data-symbol="&#xf190;"></span>
-						</div>
-						
-						<div class="text-right p-t-8 p-b-31">
-							<a href="#">
-								Forgot password?
-							</a>
-						</div>
-						
-						<div class="container-login100-form-btn">
-							<div class="wrap-login100-form-btn">
-								<div class="login100-form-bgbtn"></div>
-								<button class="login100-form-btn">
-									Login
-								</button>
-							</div>
-						</div>
-					</form>
-				</div>
+				<i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+				<i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+		
 			</div>
-		</div>
-		
+		</header><!-- End Header -->
+		<!-- End Header -->
 
-		<div id="dropDownSelect1"></div>
+
+
+
+
+		<main id="main">
+
+			<!-- ======= Log In Section ======= -->
+			<section id="Login" class="login" style="background-image: url(assets/img/sections/rovers/photo\ dump/UNADJUSTEDNONRAW_thumb_7407.jpg);">
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-lg-6 col-md-8 login-box">
+							<div class="col-lg-12 login-key">
+								<i class="fa fa-key" aria-hidden="true"></i>
+							</div>
+							<div class="col-lg-12 login-title">
+								LOGIN PORTAL
+							</div>
+
+							<div class="col-lg-12 login-form">
+								<div class="col-lg-12 login-form">
+									<form>
+										<div class="form-group">
+											<label class="form-control-label"><i class="bi bi-person"></i> USERNAME</label>
+											<input type="text" class="form-control" placeholder="Enter Your Username">
+										</div>
+										<div class="form-group">
+											<label class="form-control-label"><i class="bi bi-lock"></i> PASSWORD</label>
+											<input type="password" class="form-control" placeholder=" Enter Your Password">
+										</div>
+
+										<div class="col-lg-12 loginbtn">
+											<div class="col-lg-6 login-btn login-text">
+												<!-- Error Message -->
+											</div>
+											<div class="login-btn login-button">
+												<button type="submit" class="btn btn-outline-primary">LOGIN</button>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+							<div class="col-lg-3 col-md-2"></div>
+						</div>
+					</div>
+				</div>
+			</section><!-- End Log In Section -->
+
+		</main><!-- End #main -->
+
+
+
+			<!-- ======= Footer ======= -->
+			<footer id="footer" class="footer">
+				<div class="container">
+					<div class="row gy-4">
+					<div class="col-lg-5 col-md-12 footer-info">
+						<a href="index.html" class="logo d-flex align-items-center">
+						<span>1DS B-P Scouts</span>
+						</a>
+						<p>Traditional Outdoor Scouting for the 21st Century</p>
+						<div class="social-links d-flex mt-4">
+						<a href="https://www.facebook.com/groups/1170023889794715" class="facebook"><i class="bi bi-facebook"></i></a>
+						<a href="#contact" class="emial"><i class="bi bi-envelope"></i></a>
+						</div>
+					</div>
+			
+			
+					<div class="col-lg-3 col-6 footer-links">
+						<h4>Useful Links</h4>
+						<ul>
+						<li><a href="index.html#hero">Home</a></li>
+						<li><a href="index.html#about">About us</a></li>
+						<li><a href="index.html#sections">Sections</a></li>
+						<li><a href="index.html#leaders">Our Leaders</a></li>
+						<li><a href="index.html#history">History</a></li>
+						</ul>
+					</div>
+			
+					<div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+						<h4>Contact Us</h4>
+						<p>
+						The Sidney Taylor Hall,<br>
+						Church Cl,<br>
+						Dullingham,<br>
+						Newmarket, CB8 9XE<br>
+						<strong>Email:</strong> maburton@hotmail.co.uk<br>
+						</p>
+			
+					</div>
+			
+					</div>
+				</div>
 		
-	<!--===============================================================================================-->
-		<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-		<script src="vendor/animsition/js/animsition.min.js"></script>
-		<script src="vendor/bootstrap/js/popper.js"></script>
-		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-		<script src="vendor/select2/select2.min.js"></script>
-		<script src="vendor/daterangepicker/moment.min.js"></script>
-		<script src="vendor/daterangepicker/daterangepicker.js"></script>
-		<script src="vendor/countdowntime/countdowntime.js"></script>
-		<script src="js/main.js"></script>
+				<div class="container mt-4">
+					<div class="credits">
+					Designed and created by Josh Marsh</a>
+					</div>
+				</div>
+		
+			</footer><!-- End Footer -->
+			<!-- End Footer -->
+
+
+
+		<a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+		<div id="preloader"></div>
+
+		<!-- Vendor JS Files -->
+		<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+		<script src="assets/vendor/aos/aos.js"></script>
+		<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+		<script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+		<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+		<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+		<script src="assets/vendor/php-email-form/validate.js"></script>
+
+		<!-- Template Main JS File -->
+		<script src="assets/js/main.js"></script>
 
 	</body>
 </html>
