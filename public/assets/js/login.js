@@ -76,11 +76,13 @@ function login () {
 
   // Validate input fields
   if (validate_email(email) == false || validate_password(password) == false) {
-    alert('Email or Password is Outta Line!!')
+    alert('Email or Password is Outta Line!! login')
     return
     // Don't continue running the code
   }
+
   alert("test")
+
     auth.signInWithEmailAndPassword(email, password)
     .then(function() {
       alert("logging in")
