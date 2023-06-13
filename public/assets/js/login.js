@@ -26,12 +26,12 @@ function register () {
 
   // Validate input fields
   if (validate_email(email) == false || validate_password(password) == false) {
-    alert('Email or Password is Outta Line!!')
+    alert('Email or Password is Outta Line!! register')
     return
     // Don't continue running the code
   }
   if (validate_field(username) == false || validate_field(usertype) == false) {
-    alert('One or More Extra Fields is Outta Line!!')
+    alert('One or More Extra Fields is Outta Line!! register')
     return
   }
 
