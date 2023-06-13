@@ -1,106 +1,147 @@
-
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyCdPZxhZTz7gG31tqEZUloEHF1dP-cFEeY",
-    authDomain: "scouts-website-d09ae.firebaseapp.com",
-    databaseURL: "https://scouts-website-d09ae-default-rtdb.europe-west1.firebasedatabase.app",
-    projectId: "scouts-website-d09ae",
-    storageBucket: "scouts-website-d09ae.appspot.com",
-    messagingSenderId: "129923154201",
-    appId: "1:129923154201:web:e367705fa8d686ebf8c588"
+  apiKey: "AIzaSyCdPZxhZTz7gG31tqEZUloEHF1dP-cFEeY",
+  authDomain: "scouts-website-d09ae.firebaseapp.com",
+  databaseURL: "https://scouts-website-d09ae-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "scouts-website-d09ae",
+  storageBucket: "scouts-website-d09ae.appspot.com",
+  messagingSenderId: "129923154201",
+  appId: "1:129923154201:web:e367705fa8d686ebf8c588"
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
 
 // Initialize variables
 const auth = firebase.auth()
 const database = firebase.database()
 
-//Set up our register function
+// Set up our register function
 function register () {
-    //get all our input fields
-    email = "test@gmail.com"
-    password = "1234567"
-    username = "test1"
-    usertype = "leader"
+  // Get all our input fields
+  email = "test@gmail.com"
+  password = "1234567"
+  username = "test1"
+  usertype = "leader"
 
-    //validate user fields
-    if (validate_email(email) == false || validate_password(password) == false) {
-        alert("email or password isnt valid")
-        return
-        //dont continue
-    }
-    if (validate_fields(username) == false || validate_fields(usertype) == false) {
-        alert("one or more of the extra fields is invalid")
-        return
-        //dont continue
-    }
+  // Validate input fields
+  if (validate_email(email) == false || validate_password(password) == false) {
+    alert('Email or Password is Outta Line!!')
+    return
+    // Don't continue running the code
+  }
+  if (validate_field(username) == false || validate_field(usertype) == false) {
+    alert('One or More Extra Fields is Outta Line!!')
+    return
+  }
 
-    //continue with auth
-    auth.createUserWithEmailAndPassword(email, password)
-    .then(function() {
-        var user = auth.currentUser
+  // Move on with Auth
+  auth.createUserWithEmailAndPassword(email, password)
+    .then(function () {
+      alert("yes")
+      // Declare user variable
+      var user = auth.currentUser
 
-        //add user to firebase database
-        var database_ref = database.ref()
+      // Add this user to Firebase Database
+      var database_ref = database.ref()
 
-        //create user data
-        var user_data = {
-            email : email,
-            username : username,
-            usertype : usertype,
-            lastLogin : Date.now()
-        }
+      // Create User data
+      var user_data = {
+        email : email,
+        username : username,
+        usertype : usertype,
+        last_login : Date.now()
+      }
+  
+      // Push to Firebase Database
+      database_ref.child('users/' + user.uid).set(user_data)
 
-        database_ref.child("users/" + user.uid).set(user_data)
-
-
-        alert("user created")
-
+      // Done
+      alert('User Created!!')
     })
     .catch(function(error) {
-        // Firebase will use this to update us of its errors
-        var error_code = error.code
-        var error_message = error.messagingSenderId
+      alert("oop")
+      // Firebase will use this to alert of its errors
+      var error_code = error.code
+      var error_message = error.message
 
-        alert(error_message)
+      alert(error_message)
     })
 }
 
-function validate_email(email) {
-    expression = /^[^@]+@\w+(\.\w+)+\w$/
+// Set up our login function
+function login () {
+  // Get all our input fields
+  email = document.getElementById('email').value
+  password = document.getElementById('password').value
+  
+  // Validate input fields
+  if (validate_email(email) == false || validate_password(password) == false) {
+    alert('Email or Password is Outta Line!!')
+    return
+    // Don't continue running the code
+  }
+  
+    auth.signInWithEmailAndPassword(email, password)
+    .then(function() {
+      // Declare user variable
+      var user = auth.currentUser
+  
+      // Add this user to Firebase Database
+      var database_ref = database.ref()
+  
+      // Create User data
+      var user_data = {
+        last_login : Date.now()
+      }
+  
+      // Push to Firebase Database
+      database_ref.child('users/' + user.uid).update(user_data)
+  
+      // DOne
+      alert('User Logged In!!')
+  
+    })
+    .catch(function(error) {
+      // Firebase will use this to alert of its errors
+      var error_code = error.code
+      var error_message = error.message
+  
+      alert(error_message)
+    })
+}
 
-    if (expression.test(email) == true) {
-        //email is good
-        return true
-    } else {
-        //email is bad
-        return false
-    }
+
+
+// Validate Functions
+function validate_email(email) {
+  expression = /^[^@]+@\w+(\.\w+)+\w$/
+  if (expression.test(email) == true) {
+    // Email is good
+    return true
+  } else {
+    // Email is not good
+    return false
+  }
 }
 
 function validate_password(password) {
-    if (password > 6) {
-        //password is good
-        return true
-    } else {
-        //password is bad
-        return false
-    }
+  // Firebase only accepts lengths greater than 6
+  if (password.length < 6) {
+    return false
+  } else {
+    return true
+  }
 }
 
-function validate_fields(field) {
-    if (field == null) {
-        //field is bad
-        return false
-    }
+function validate_field(field) {
+  if (field == null) {
+    return false
+  }
 
-    if (field.length > 0) {
-        //field is good
-        return true
-    } else {
-        //field is bad
-        return false
-    }
-}
+  if (field.length <= 0) {
+    return false
+  } else {
+    return true
+  }
+} 
