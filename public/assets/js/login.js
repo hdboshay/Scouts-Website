@@ -70,7 +70,6 @@ function register () {
 
 // Set up our login function
 function login () {
-  show_error_message()
   // Get all our input fields
   email = document.getElementById('email').value
   password = document.getElementById('password').value
@@ -106,7 +105,7 @@ function login () {
       // Firebase will use this to alert of its errors
       var error_code = error.code
       var error_message = error.message
-  
+      
       alert(error_message)
     })
 }
