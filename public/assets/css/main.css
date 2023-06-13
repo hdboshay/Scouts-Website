@@ -1884,11 +1884,81 @@ label {
 .login-text {
   text-align: left;
   padding-left: 0px;
-  color: #A2A4A4;
+  color: #ff5b5b;
+  padding-bottom: 40px;
+  text-align: center;
+  font-weight: bold;
 }
 
 .loginbtn {
   padding: 0px;
+}
+
+.login .keep-login {
+  background-color: #00000000;
+  text-align: left;
+  font-size: 15px;
+  color: #d1d1d1;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding-bottom: 40px;
+}
+
+ /* The switch - the box around the slider */
+.login .switch {
+  position: relative;
+  float: right;
+  background-color: #00000000;
+  width: 60px;
+  height: 28px;
+}
+
+/* Hide default HTML checkbox */
+.login .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.login .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.login .slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 7px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #908818;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #908818;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
 }
 
 
