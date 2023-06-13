@@ -139,7 +139,10 @@
 												<!-- Error Message -->Error message
 											</div>
 											<div class="login-btn login-button">
-												<button type="submit" class="btn btn-outline-primary">LOGIN</button>
+												<button type="submit" class="btn btn-outline-primary" onclick="login()">LOGIN</button>
+											</div>
+											<div class="login-btn login-button">
+												<button type="submit" class="btn btn-outline-primary" onclick="register()">register</button>
 											</div>
 										</div>
 									</form>
@@ -219,8 +222,22 @@
 		<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
 		<script src="assets/vendor/php-email-form/validate.js"></script>
 
+		<!-- The core Firebase JS SDK is always required and must be listed first -->
+		<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+
+		<!-- TODO: Add SDKs for Firebase products that you want to use
+			https://firebase.google.com/docs/web/setup#available-libraries -->
+		<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+
+
+
+
+
+
 		<!-- Template Main JS File -->
 		<script src="assets/js/main.js"></script>
+		<script src="assets/js/login.js"></script>
 
 	</body>
 </html>
