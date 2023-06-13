@@ -23,6 +23,12 @@
     } , {
       "source": "/rovers",
       "destination": "/Rovers.html"
+    } , {
+      "source": "/login",
+      "destination": "/Login Page.html"
+    } , {
+      "source": "/Login",
+      "destination": "/Login Page.html"
     }]
   }
 }
