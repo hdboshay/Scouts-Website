@@ -9,88 +9,66 @@ const firebaseConfig = {
   appId: "1:129923154201:web:e367705fa8d686ebf8c588"
 };
 
+
+
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
 // Initialize variables
-const auth = firebase.auth()
-const database = firebase.database()
+const auth = firebase.auth();
+const database = firebase.database();
 
-// Set up our register function
-function register () {
-  // Get all our input fields
-  email = "test@gmail.com"
-  password = "1234567"
-  username = "test1"
-  usertype = "leader"
-
-  // Validate input fields
-  if (validate_email(email) == false || validate_password(password) == false) {
-    alert('Email or Password is Outta Line!! register')
-    return
-    // Don't continue running the code
-  }
-  if (validate_field(username) == false || validate_field(usertype) == false) {
-    alert('One or More Extra Fields is Outta Line!! register')
-    return
+function register() {
+  var email = document.getElementById('email').value;
+  var password = document.getElementById('password').value;
+  if (email.length < 4 || password.length < 4) {
+    alert('email or password is invalid');
+    return;
   }
 
-  // Move on with Auth
-  auth.createUserWithEmailAndPassword(email, password)
-    .then(function () {
-      alert("yes")
-      // Declare user variable
-      var user = auth.currentUser
+  console.log("pre command");
+  // Create user with email and pass.
+  firebase.auth().createUserWithEmailAndPassword(email, password).then((user) => {
+    console.log("then");
+  })
+  .catch((error) => {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
 
-      // Add this user to Firebase Database
-      var database_ref = database.ref()
-
-      // Create User data
-      var user_data = {
-        email : email,
-        username : username,
-        usertype : usertype,
-        last_login : Date.now()
-      }
-
-      // Push to Firebase Database
-      database_ref.child('users/' + user.uid).set(user_data)
-
-      // Done
-      alert('User Created!!')
-    })
-    .catch(function(error) {
-      // Firebase will use this to alert of its errors
-      var error_code = error.code
-      var error_message = error.message
-
-      alert(error_message)
-    })
+    if (errorCode == 'auth/weak-password') {
+      alert('The password is too weak.');
+    } else {
+      alert(errorMessage);
+    }
+    console.log(error);
+  });
+  console.log("done");
 }
 
 // Set up our login function
 function login () {
   // Get all our input fields
-  email = document.getElementById('email').value
-  password = document.getElementById('password').value
+  email = document.getElementById('email').value;
+  password = document.getElementById('password').value;
 
   // Validate input fields
   if (validate_email(email) == false || validate_password(password) == false) {
-    alert('Email or Password is Outta Line!! login')
-    return
+    alert('Email or Password is Outta Line!! login');
+    return;
     // Don't continue running the code
   }
 
-  alert("test")
+  console.log("test");
 
     auth.signInWithEmailAndPassword(email, password)
     .then(function() {
-      alert("logging in")
+      console.log("logging in");
       // Declare user variable
-      var user = auth.currentUser
+      var user = auth.currentUser;
     
       // Add this user to Firebase Database
-      var database_ref = database.ref()
+      var database_ref = database.ref();
     
       // Create User data
       var user_data = {
@@ -98,17 +76,17 @@ function login () {
       }
     
       // Push to Firebase Database
-      database_ref.child('users/' + user.uid).update(user_data)
+      database_ref.child('users/' + user.uid).update(user_data);
     
       // Done
-      alert('User Logged In!!')
+      console.log('User Logged In!!');
     })
     .catch(function(error) {
       // Firebase will use this to alert of its errors
-      var error_code = error.code
-      var error_message = error.message
+      var error_code = error.code;
+      var error_message = error.message;
       
-      alert(error_message)
+      console.log(error_message);
     })
 }
 
@@ -116,34 +94,34 @@ function login () {
 
 // Validate Functions
 function validate_email(email) {
-  expression = /^[^@]+@\w+(\.\w+)+\w$/
+  expression = /^[^@]+@\w+(\.\w+)+\w$/;
   if (expression.test(email) == true) {
     // Email is good
-    return true
+    return true;
   } else {
     // Email is not good
-    return false
+    return false;
   }
 }
 
 function validate_password(password) {
   // Firebase only accepts lengths greater than 6
   if (password.length < 6) {
-    return false
+    return false;
   } else {
-    return true
+    return true;
   }
 }
 
 function validate_field(field) {
   if (field == null) {
-    return false
+    return false;
   }
 
   if (field.length <= 0) {
-    return false
+    return false;
   } else {
-    return true
+    return true;
   }
 } 
 

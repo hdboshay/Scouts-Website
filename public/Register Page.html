@@ -110,11 +110,8 @@
 							<div class="col-lg-12 login-key">
 								<i class="fa fa-key" aria-hidden="true"></i>
 							</div>
-							<div class="col-lg-12 order-1 order-lg-2">
-								<img src="assets/img/necker.png" style="margin-top: -25px;" width="750" height="auto" class="img-fluid" alt="" data-aos="zoom-out" data-aos-delay="100">
-							</div>
 							<div class="col-lg-12 login-title">
-								LOGIN PORTAL
+								REGISTER PORTAL
 							</div>
 
 							<div class="col-lg-12 login-form">
@@ -124,17 +121,17 @@
 											<label class="form-control-label"><i class="bi bi-envelope"></i> EMAIL</label>
 											<input type="text" id="email" class="form-control" placeholder="Enter Your Email">
 										</div>
-										<div class="form-group" style="margin-bottom: 20px">
+										<div class="form-group">
 											<label class="form-control-label"><i class="bi bi-lock"></i> PASSWORD</label>
 											<input type="password" id="password" class="form-control" placeholder=" Enter Your Password">
 										</div>
-
-										<div col-lg-12 class="login keep-login">
-											Keep me logged in?
-											<label class="login switch">
-												<input type="checkbox">
-												<span class="slider"></span>
-											</label>
+                                        <div class="form-group">
+											<label class="form-control-label"><i class="bi bi-person"></i> USERNAME</label>
+											<input type="text" id="username" class="form-control" placeholder=" Enter Your Username">
+										</div>
+                                        <div class="form-group" style="margin-bottom: 20px">
+											<label class="form-control-label"><i class="bi bi-suit-diamond"></i> USERTYPE</label>
+											<input type="text" id="usertype" class="form-control" placeholder=" Enter Your Usertype">
 										</div>
 
 										<div class="col-lg-12 loginbtn">
@@ -143,7 +140,7 @@
 												Your email or password is incorrect, Please try again!
 											</div>
 											<div class="login-btn login-button">
-												<button type="submit" class="btn btn-outline-primary" onclick="login()">LOGIN</button>
+												<button type="submit" class="btn btn-outline-primary" onclick="register()">Register</button>
 											</div>
 										</div>
 									</form>
@@ -224,12 +221,12 @@
 		<script src="assets/vendor/php-email-form/validate.js"></script>
 
 		<!-- The core Firebase JS SDK is always required and must be listed first -->
-		<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
 
 		<!-- TODO: Add SDKs for Firebase products that you want to use
 			https://firebase.google.com/docs/web/setup#available-libraries -->
-		<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js"></script>
-		<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
 
 
 
