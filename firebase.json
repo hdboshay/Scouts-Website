@@ -29,6 +29,12 @@
     } , {
       "source": "/Login",
       "destination": "/Login Page.html"
+    } , {
+      "source": "/register",
+      "destination": "/Register Page.html"
+    } , {
+      "source": "/Register",
+      "destination": "/Register Page.html"
     }]
   }
 }
