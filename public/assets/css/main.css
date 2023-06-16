@@ -1510,6 +1510,49 @@ section {
   font-size: 14px;
 }
 
+.contact input[type=email] {
+  background-color: #00000000;
+  border: none;
+  border-bottom: 2px solid #908818;
+  border-top: 0px;
+  border-radius: 0px;
+  font-weight: bold;
+  outline: 0;
+  margin-bottom: 20px;
+  padding-left: 0px;
+  color: var(--color-primary);
+}
+
+.contact input[type=text] {
+  background-color: #00000000;
+  border: none;
+  border-bottom: 2px solid #908818;
+  border-top: 0px;
+  border-radius: 0px;
+  font-weight: bold;
+  outline: 0;
+  margin-bottom: 20px;
+  padding-left: 0px;
+  color: var(--color-primary);
+}
+
+.contact textarea {
+  background-color: #00000000;
+  border: none;
+  border-bottom: 2px solid #908818;
+  border-top: 0px;
+  border-radius: 0px;
+  font-weight: bold;
+  outline: 0;
+  margin-bottom: 20px;
+  padding-left: 0px;
+  color: var(--color-primary);
+}
+
+.contact textarea:focus {
+  color: var(--color-primary);
+}
+
 .contact .info-item:hover i {
   background: #fff;
   color: var(--color-primary);
