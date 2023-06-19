@@ -42,13 +42,8 @@ function submitForm(e){
   // Clear form
   document.getElementById('contactForm').reset();
 }
-  
-// Function to get form value
-function getInputVal(id){
-  return document.getElementById(id).value;
-}
-  
-  // Save message to firebase
+
+// Save message to firebase
 function saveMessage(name, email, subject, message){
   var newMessageRef = messagesRef.push();
   newMessageRef.set({
