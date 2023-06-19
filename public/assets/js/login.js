@@ -1,3 +1,8 @@
+import { initializeApp } from "firebase/app";
+
+import { getAuth } from "firebase/auth";
+import { database } from "firebase/database"
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyCdPZxhZTz7gG31tqEZUloEHF1dP-cFEeY",
@@ -12,11 +17,11 @@ const firebaseConfig = {
 
 
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 
 // Initialize variables
-const auth = firebase.auth();
-const database = firebase.database();
+const auth = getAuth();
+const database = database();
 
 function register() {
   var email = document.getElementById('email').value;
@@ -35,6 +40,8 @@ function register() {
     // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
+
+    show_error_message()
 
     if (errorCode == 'auth/weak-password') {
       alert('The password is too weak.');
@@ -112,18 +119,6 @@ function validate_password(password) {
     return true;
   }
 }
-
-function validate_field(field) {
-  if (field == null) {
-    return false;
-  }
-
-  if (field.length <= 0) {
-    return false;
-  } else {
-    return true;
-  }
-} 
 
 function show_error_message() {
   document.getElementById("error-message").style.visibility = "visible";

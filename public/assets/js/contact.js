@@ -1,3 +1,5 @@
+import { initializeApp } from "firebase/app";
+
 // Initialize Firebase
 const firebaseConfig = {
   apiKey: "AIzaSyCdPZxhZTz7gG31tqEZUloEHF1dP-cFEeY",
@@ -9,16 +11,13 @@ const firebaseConfig = {
   appId: "1:129923154201:web:e367705fa8d686ebf8c588"
 };
 
-firebase.initializeApp(config);
+const app = initializeApp(firebaseConfig);
 
 // Reference messages collection
 var messagesRef = firebase.database().ref('messages');
 
-// Listen for form submit
-document.getElementById('contactForm').addEventListener('submit', submitForm);
-
 // Submit form
-function submitForm(e){
+function submitForm(){
   alert("submit")
   e.preventDefault();
 
