@@ -35,6 +35,9 @@
     } , {
       "source": "/Register",
       "destination": "/Register Page.html"
+    } , {
+      "source": "/files",
+      "destination": "/Files.html"
     }]
   }
 }
