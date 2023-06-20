@@ -1,5 +1,5 @@
 // Import the functions you need from the SDKs you need
-import { getDatabase, ref, push, child } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js"
+import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js"
 import app from "/assets/js/load.js"
 
 // Initialize variables
@@ -25,11 +25,11 @@ function submitForm(){
   var message = document.getElementById('message');
   
   // Save message
-  console.log("saving message....")
+  console.log("saving message")
   saveMessage(name, email, subject, message);
-  console.log("message saved");
+  console.log("message saved")
   // Show alert
-  alert("message sent");
+  alert("message sent")
   
   // Clear form
   document.getElementById('contactForm').reset();
@@ -39,7 +39,8 @@ function submitForm(){
 function saveMessage(name, email, subject, message){
   // Reference messages collection
   var messagesRef = ref(database, 'messages/');
-  console.log("reference aquired")
+  console.log("ref aquired")
+
   // Create Message data
   var message_data = {
     name : name,
@@ -48,13 +49,7 @@ function saveMessage(name, email, subject, message){
     message : message
   };
 
-  console.log(message_data);
+  console.log(name, email, subject, message)
 
   push(messagesRef, message_data);
-
-
-  postsRef = ref(child(database, 'messages/'));
-  // Generate a reference to a new location and add some data using push()
-  var newPostRef = postsRef.push(message_data);
-  
 }
