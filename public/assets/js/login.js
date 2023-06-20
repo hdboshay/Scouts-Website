@@ -34,7 +34,6 @@ function register() {
   let username = document.getElementById('username').value;
   let usertype = document.getElementById('usertype').value;
 
-  console.log("step 1")
   console.log(email, password, username, usertype)
   // Create user with email and pass.
   createUserWithEmailAndPassword(auth, email, password)

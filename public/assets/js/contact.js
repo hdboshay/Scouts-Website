@@ -25,10 +25,11 @@ function submitForm(){
   var message = document.getElementById('message');
   
   // Save message
+  console.log("saving message....")
   saveMessage(name, email, subject, message);
-  console.log("message saved")
+  console.log("message saved");
   // Show alert
-  alert("message sent")
+  alert("message sent");
   
   // Clear form
   document.getElementById('contactForm').reset();
@@ -38,7 +39,7 @@ function submitForm(){
 function saveMessage(name, email, subject, message){
   // Reference messages collection
   var messagesRef = ref(child(database, 'messages/'));
-
+  console.log("reference aquired")
   // Create Message data
   var message_data = {
     name : name,
@@ -47,7 +48,7 @@ function saveMessage(name, email, subject, message){
     message : message
   };
 
-  console.log(message_data)
+  console.log(message_data);
 
   push(messagesRef, message_data);
 
