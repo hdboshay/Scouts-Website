@@ -1,5 +1,5 @@
 // Import the functions you need from the SDKs you need
-import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js"
+import { getDatabase, ref, push, child } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js"
 import app from "/assets/js/load.js"
 
 // Initialize variables
@@ -50,7 +50,7 @@ function saveMessage(name, email, subject, message){
   push(messagesRef, message_data);
 
 
-  postsRef = ref(database, 'messages/');
+  postsRef = ref(child(database, 'messages/'));
   // Generate a reference to a new location and add some data using push()
   var newPostRef = postsRef.push(message_data);
   
