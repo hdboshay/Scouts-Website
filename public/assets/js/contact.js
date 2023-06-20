@@ -23,7 +23,7 @@ function submitForm(){
   let email = document.getElementById('email').value;
   let subject = document.getElementById('subject').value;
   let message = document.getElementById('message').value;
-  
+
   console.log(name, email, subject, message);
   console.log(check_fields(name, email, subject, message));
 
@@ -59,7 +59,9 @@ function saveMessage(name, email, subject, message){
 }
 
 function check_fields(name, email, subject, message) {
-  if (name == null || email == null || subject == null || message == null) {
+  if (name == "<empty string>" || email == null || subject == null || message == null) {
     return false
+  } else {
+    return true
   }
 }
