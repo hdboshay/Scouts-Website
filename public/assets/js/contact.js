@@ -45,8 +45,13 @@ function saveMessage(name, email, subject, message){
     email : email,
     subject : subject,
     message : message
-  }
+  };
 
   push(messagesRef, message_data);
+
+
+  postsRef = ref(database, 'messages/');
+  // Generate a reference to a new location and add some data using push()
+  var newPostRef = postsRef.push(message_data);
   
 }
