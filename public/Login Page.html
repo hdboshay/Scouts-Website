@@ -23,8 +23,11 @@
 		<link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
 		<link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 	
-		<!-- Template Main CSS File -->
+		<!-- Main CSS File -->
 		<link href="assets/css/main.css" rel="stylesheet">
+
+		<!-- JS File -->
+		<script type="module" src="/public/assets/js/login.js"></script>
 	
 		<!-- =======================================================
 		* Template Name: Impact
@@ -122,11 +125,11 @@
 									<form>
 										<div class="form-group">
 											<label class="form-control-label"><i class="bi bi-envelope"></i> EMAIL</label>
-											<input type="text" id="email" class="form-control" placeholder="Enter Your Email">
+											<input type="text" id="email" class="form-control" placeholder="Enter Your Email" required>
 										</div>
 										<div class="form-group" style="margin-bottom: 20px">
 											<label class="form-control-label"><i class="bi bi-lock"></i> PASSWORD</label>
-											<input type="password" id="password" class="form-control" placeholder=" Enter Your Password">
+											<input type="password" id="password" class="form-control" placeholder=" Enter Your Password" required>
 										</div>
 
 										<div col-lg-12 class="login keep-login">
@@ -143,7 +146,7 @@
 												Your email or password is incorrect, Please try again!
 											</div>
 											<div class="login-btn login-button">
-												<button type="submit" class="btn btn-outline-primary" onclick="login()">LOGIN</button>
+												<button id="loginButton" class="btn btn-outline-primary">LOGIN</button>
 											</div>
 										</div>
 									</form>
@@ -221,24 +224,10 @@
 		<script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
 		<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 		<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-		<script src="assets/vendor/php-email-form/validate.js"></script>
 
-		<!-- The core Firebase JS SDK is always required and must be listed first -->
-		<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js"></script>
-
-		<!-- TODO: Add SDKs for Firebase products that you want to use
-			https://firebase.google.com/docs/web/setup#available-libraries -->
-		<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js"></script>
-		<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js"></script>
-
-
-
-
-
-
-		<!-- Template Main JS File -->
-		<script src="assets/js/main.js"></script>
-		<script src="assets/js/login.js"></script>
+		<!-- JS Files -->
+		<script type="module" src="/public/assets/js/main.js"></script>
+		<script type="module" src="/public/assets/js/load.js"></script>
 
 	</body>
 </html>

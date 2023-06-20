@@ -1,27 +1,23 @@
-import { initializeApp } from "firebase/app";
-
-import { getAuth } from "firebase/auth";
-import { database } from "firebase/database"
-
-// Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyCdPZxhZTz7gG31tqEZUloEHF1dP-cFEeY",
-  authDomain: "scouts-website-d09ae.firebaseapp.com",
-  databaseURL: "https://scouts-website-d09ae-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "scouts-website-d09ae",
-  storageBucket: "scouts-website-d09ae.appspot.com",
-  messagingSenderId: "129923154201",
-  appId: "1:129923154201:web:e367705fa8d686ebf8c588"
-};
-
-
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
+// Import the functions you need from the SDKs you need
+import { getAuth } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
+import { getDatabase } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js"
+import app from "/public/assets/js/load.js"
 
 // Initialize variables
 const auth = getAuth();
-const database = database();
+const database = getDatabase();
+
+//buttons
+const loginButton = document.getElementById("loginButton")
+if (loginButton) {
+  loginButton.addEventListener('click', login)
+}
+
+const registerButton = document.getElementById("registerButton")
+if (registerButton) {
+  registerButton.addEventListener('click', register)
+}
+
 
 function register() {
   var email = document.getElementById('email').value;
@@ -55,10 +51,12 @@ function register() {
 
 // Set up our login function
 function login () {
+  console.log("step 1");
+
   // Get all our input fields
   email = document.getElementById('email').value;
   password = document.getElementById('password').value;
-
+  console.log("step 2");
   // Validate input fields
   if (validate_email(email) == false || validate_password(password) == false) {
     alert('Email or Password is Outta Line!! login');
@@ -66,7 +64,7 @@ function login () {
     // Don't continue running the code
   }
 
-  console.log("test");
+  console.log("step 3");
 
     auth.signInWithEmailAndPassword(email, password)
     .then(function() {
@@ -101,7 +99,7 @@ function login () {
 
 // Validate Functions
 function validate_email(email) {
-  expression = /^[^@]+@\w+(\.\w+)+\w$/;
+  var expression = /^[^@]+@\w+(\.\w+)+\w$/;
   if (expression.test(email) == true) {
     // Email is good
     return true;

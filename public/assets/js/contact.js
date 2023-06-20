@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 
-// Initialize Firebase
+// Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyCdPZxhZTz7gG31tqEZUloEHF1dP-cFEeY",
   authDomain: "scouts-website-d09ae.firebaseapp.com",
@@ -11,6 +11,7 @@ const firebaseConfig = {
   appId: "1:129923154201:web:e367705fa8d686ebf8c588"
 };
 
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
 // Reference messages collection
