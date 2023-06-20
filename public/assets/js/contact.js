@@ -47,6 +47,8 @@ function saveMessage(name, email, subject, message){
     message : message
   };
 
+  console.log(message_data)
+
   push(messagesRef, message_data);
 
 
