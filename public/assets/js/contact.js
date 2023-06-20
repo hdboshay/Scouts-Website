@@ -23,23 +23,26 @@ function submitForm(){
   let email = document.getElementById('email').value;
   let subject = document.getElementById('subject').value;
   let message = document.getElementById('message').value;
-  console.log(name, email, subject, message)
-  // Save message
-  console.log("saving message")
-  saveMessage(name, email, subject, message);
-  console.log("message saved")
-  // Show alert
-  alert("message sent")
-  
-  // Clear form
-  document.getElementById('contactForm').reset();
+
+  if (check_fields(name, email, subject, message)) {
+    // Save message
+    saveMessage(name, email, subject, message);
+    console.log("message saved")
+    
+    // Show alert
+    alert("message sent")
+    
+    // Clear form
+    document.getElementById('contactForm').reset();
+  } else {
+    alert("One or more of the fields was empty");
+  }
 }
 
 // Save message to firebase
 function saveMessage(name, email, subject, message){
   // Reference messages collection
   var messagesRef = ref(database, 'messages/');
-  console.log("ref aquired")
 
   // Create Message data
   var message_data = {
@@ -49,7 +52,11 @@ function saveMessage(name, email, subject, message){
     message : message
   };
 
-  console.log(name, email, subject, message)
-
   push(messagesRef, message_data);
+}
+
+function check_fields(name, email, subject, message) {
+  if (name == null || email == null || subject == null || message == null) {
+    return false
+  }
 }
