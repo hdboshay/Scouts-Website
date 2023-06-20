@@ -59,7 +59,7 @@ function saveMessage(name, email, subject, message){
 }
 
 function check_fields(name, email, subject, message) {
-  if (name == "<empty string>" || email == null || subject == null || message == null) {
+  if (name.length == 0 || email.length == 0 || subject.length == 0 || message.length == 0) {
     return false
   } else {
     return true
