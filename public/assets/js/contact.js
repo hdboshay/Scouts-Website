@@ -1,5 +1,5 @@
 // Import the functions you need from the SDKs you need
-import { getDatabase, ref, push, child } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js"
+import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js"
 import app from "/assets/js/load.js"
 
 // Initialize variables
@@ -28,12 +28,7 @@ function submitForm(){
   saveMessage(name, email, subject, message);
   console.log("message saved")
   // Show alert
-  document.querySelector('.alert').style.display = 'block';
-  
-  // Hide alert after 3 seconds
-  setTimeout(function(){
-    document.querySelector('.alert').style.display = 'none';
-  },3000);
+  alert("message sent")
   
   // Clear form
   document.getElementById('contactForm').reset();
