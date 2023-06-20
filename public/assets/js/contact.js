@@ -19,10 +19,10 @@ if (contactButton) {
 function submitForm(){
   console.log("in function")
   //Get value
-  var name = document.getElementById('name');
-  var email = document.getElementById('email');
-  var subject = document.getElementById('subject');
-  var message = document.getElementById('message');
+  var name = document.getElementById('name').value;
+  var email = document.getElementById('email').value;
+  var subject = document.getElementById('subject').value;
+  var message = document.getElementById('message').value;
   console.log(name, email, subject, message)
   // Save message
   console.log("saving message")
