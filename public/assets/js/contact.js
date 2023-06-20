@@ -38,7 +38,7 @@ function submitForm(){
 // Save message to firebase
 function saveMessage(name, email, subject, message){
   // Reference messages collection
-  var messagesRef = ref(child(database, 'messages/'));
+  var messagesRef = ref(database, 'messages/');
   console.log("reference aquired")
   // Create Message data
   var message_data = {
