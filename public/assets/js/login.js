@@ -1,5 +1,5 @@
 // Import the functions you need from the SDKs you need
-import { getAuth } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
 import { getDatabase } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js"
 import app from "/public/assets/js/load.js"
 
@@ -59,14 +59,14 @@ function login () {
   console.log("step 2");
   // Validate input fields
   if (validate_email(email) == false || validate_password(password) == false) {
-    alert('Email or Password is Outta Line!! login');
+    show_error_message()
     return;
     // Don't continue running the code
   }
 
   console.log("step 3");
 
-    auth.signInWithEmailAndPassword(email, password)
+  signInWithEmailAndPassword(auth, email, password)
     .then(function() {
       console.log("logging in");
       // Declare user variable
