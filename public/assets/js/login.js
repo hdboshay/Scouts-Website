@@ -7,10 +7,13 @@ import app from "/public/assets/js/load.js"
 const auth = getAuth();
 const database = getDatabase();
 
+console.log("login file loaded")
+
 //buttons
 const loginButton = document.getElementById("loginButton")
 if (loginButton) {
   loginButton.addEventListener('click', function(event){
+    console.log("login pressed")
     event.preventDefault()
     login()
   });

@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   "use strict";
-
+  console.log("main file loaded")
   /**
    * Preloader
    */
