@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
-import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
-import { getDatabase } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js"
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
+import { getDatabase, ref, update, child } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js"
 import app from "/public/assets/js/load.js"
 
 // Initialize variables
@@ -10,7 +10,11 @@ const database = getDatabase();
 //buttons
 const loginButton = document.getElementById("loginButton")
 if (loginButton) {
-  loginButton.addEventListener('click', login)
+  loginButton.addEventListener('click', function(event){
+    event.preventDefault()
+    console.log("yes")
+    login()
+  });
 }
 
 const registerButton = document.getElementById("registerButton")
@@ -20,18 +24,24 @@ if (registerButton) {
 
 
 function register() {
-  var email = document.getElementById('email').value;
-  var password = document.getElementById('password').value;
+  console.log("step 1");
+  let email = document.getElementById('email').value;
+  let password = document.getElementById('password').value;
+  console.log("step 2");
   if (email.length < 4 || password.length < 4) {
     alert('email or password is invalid');
     return;
   }
-
-  console.log("pre command");
+  console.log("step 3");
   // Create user with email and pass.
-  firebase.auth().createUserWithEmailAndPassword(email, password).then((user) => {
-    console.log("then");
+  createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in
+    console.log("user created and signed in");
+    const user = userCredential.user;
+    // ...
   })
+
   .catch((error) => {
     // Handle Errors here.
     var errorCode = error.code;
@@ -67,24 +77,22 @@ function login () {
   console.log("step 3");
 
   signInWithEmailAndPassword(auth, email, password)
-    .then(function() {
+    .then((userCredential) => {
       console.log("logging in");
       // Declare user variable
-      var user = auth.currentUser;
-    
-      // Add this user to Firebase Database
-      var database_ref = database.ref();
+      const user = userCredential.user;
     
       // Create User data
       var user_data = {
         last_login : Date.now()
       }
-    
-      // Push to Firebase Database
-      database_ref.child('users/' + user.uid).update(user_data);
+      
+      update(ref(database, 'users/' + user.uid), user_data);
+      
     
       // Done
       console.log('User Logged In!!');
+      location.href = 'index.html';
     })
     .catch(function(error) {
       // Firebase will use this to alert of its errors
@@ -94,7 +102,6 @@ function login () {
       console.log(error_message);
     })
 }
-
 
 
 // Validate Functions
