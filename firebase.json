@@ -5,6 +5,39 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
-    ]
+    ],
+    "cleanUrls" : true,
+
+    "rewrites": [{
+      "source": "/beavers",
+      "destination": "/Beavers.html"
+    } , {
+      "source": "/cubs",
+      "destination": "/Cubs.html"
+    } , {
+      "source": "/scouts",
+      "destination": "/Scouts.html"
+    } , {
+      "source": "/senior scouts",
+      "destination": "/Senior Scouts.html"
+    } , {
+      "source": "/rovers",
+      "destination": "/Rovers.html"
+    } , {
+      "source": "/login",
+      "destination": "/Login Page.html"
+    } , {
+      "source": "/Login",
+      "destination": "/Login Page.html"
+    } , {
+      "source": "/register",
+      "destination": "/Register Page.html"
+    } , {
+      "source": "/Register",
+      "destination": "/Register Page.html"
+    } , {
+      "source": "/files",
+      "destination": "/Files.html"
+    }]
   }
 }
