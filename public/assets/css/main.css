@@ -1635,7 +1635,7 @@ section {
   padding: 10px 12px;
 }
 
-.contact .email-form button[type=submit] {
+.contact .email-form button[id=contactButton] {
   background: var(--color-primary);
   border: 0;
   padding: 14px 45px;

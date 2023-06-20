@@ -1,27 +1,23 @@
-import { initializeApp } from "firebase/app";
+// Import the functions you need from the SDKs you need
+import { getDatabase, ref, push, child } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js"
+import app from "/assets/js/load.js"
 
-// Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyCdPZxhZTz7gG31tqEZUloEHF1dP-cFEeY",
-  authDomain: "scouts-website-d09ae.firebaseapp.com",
-  databaseURL: "https://scouts-website-d09ae-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "scouts-website-d09ae",
-  storageBucket: "scouts-website-d09ae.appspot.com",
-  messagingSenderId: "129923154201",
-  appId: "1:129923154201:web:e367705fa8d686ebf8c588"
-};
+// Initialize variables
+const database = getDatabase();
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
+console.log("contact file loaded")
 
-// Reference messages collection
-var messagesRef = firebase.database().ref('messages');
+const contactButton = document.getElementById("contactButton")
+if (contactButton) {
+  contactButton.addEventListener('click', function(event){
+    event.preventDefault()
+    submitForm()
+  });
+}
 
 // Submit form
 function submitForm(){
-  alert("submit")
-  e.preventDefault();
-
+  console.log("in function")
   //Get value
   var name = document.getElementById('name');
   var email = document.getElementById('email');
@@ -30,7 +26,7 @@ function submitForm(){
   
   // Save message
   saveMessage(name, email, subject, message);
-  
+  console.log("message saved")
   // Show alert
   document.querySelector('.alert').style.display = 'block';
   
@@ -45,11 +41,17 @@ function submitForm(){
 
 // Save message to firebase
 function saveMessage(name, email, subject, message){
-  var newMessageRef = messagesRef.push();
-  newMessageRef.set({
-    name: name,
-    email: email,
-    subject: subject,
-    message: message
-  });
+  // Reference messages collection
+  var messagesRef = ref(database, 'messages/');
+
+  // Create Message data
+  var message_data = {
+    name : name,
+    email : email,
+    subject : subject,
+    message : message
+  }
+
+  push(messagesRef, message_data);
+  
 }
