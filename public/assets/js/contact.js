@@ -23,12 +23,15 @@ function submitForm(){
   let email = document.getElementById('email').value;
   let subject = document.getElementById('subject').value;
   let message = document.getElementById('message').value;
+  
+  console.log(name, email, subject, message);
+  console.log(check_fields(name, email, subject, message));
 
   if (check_fields(name, email, subject, message)) {
     // Save message
     saveMessage(name, email, subject, message);
     console.log("message saved")
-    
+
     // Show alert
     alert("message sent")
     
