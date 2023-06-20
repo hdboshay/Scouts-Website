@@ -9,29 +9,38 @@
     "cleanUrls" : true,
 
     "rewrites": [{
-      "source": "/beavers",
-      "destination": "/Beavers.html"
+      "source": "/Beavers",
+      "destination": "/beavers.html"
     } , {
-      "source": "/cubs",
-      "destination": "/Cubs.html"
+      "source": "/Cubs",
+      "destination": "/cubs.html"
     } , {
-      "source": "/scouts",
-      "destination": "/Scouts.html"
+      "source": "/Scouts",
+      "destination": "/scouts.html"
+    } , {
+      "source": "/Senior Scouts",
+      "destination": "/senior-scouts.html"
     } , {
       "source": "/senior scouts",
-      "destination": "/Senior Scouts.html"
+      "destination": "/senior-scouts.html"
     } , {
-      "source": "/rovers",
-      "destination": "/Rovers.html"
+      "source": "/Rovers",
+      "destination": "/rovers.html"
+    } , {
+      "source": "/login",
+      "destination": "/login-page.html"
+    } , {
+      "source": "/Login",
+      "destination": "/login-page.html"
     } , {
       "source": "/register",
-      "destination": "/Register Page.html"
+      "destination": "/register-page.html"
     } , {
       "source": "/Register",
-      "destination": "/Register Page.html"
+      "destination": "/register-page.html"
     } , {
-      "source": "/files",
-      "destination": "/Files.html"
+      "source": "/Files",
+      "destination": "/files.html"
     }]
   }
 }
