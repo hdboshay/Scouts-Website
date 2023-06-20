@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
 import { getDatabase, ref, update, child } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js"
-import app from "/public/assets/js/load.js"
+import app from "/assets/js/load.js"
 
 // Initialize variables
 const auth = getAuth();
