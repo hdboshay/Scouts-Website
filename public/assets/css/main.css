@@ -1934,6 +1934,16 @@ label {
   visibility: hidden;
 }
 
+.register-text {
+  text-align: left;
+  padding-left: 0px;
+  color: #5bff66;
+  padding-bottom: 40px;
+  text-align: center;
+  font-weight: bold;
+  visibility: hidden;
+}
+
 .loginbtn {
   padding: 0px;
 }
