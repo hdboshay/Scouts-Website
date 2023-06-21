@@ -95,7 +95,7 @@ function login () {
 
       // Done
       console.log('User Logged In!!');
-      location.href = 'index.html';
+      //location.href = 'index.html';
     })
     .catch(function(error) {
       // Firebase will use this to alert of its errors
