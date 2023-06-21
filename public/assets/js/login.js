@@ -92,6 +92,19 @@ function login () {
         console.log(data)
       });
       
+      switch(data) {
+        case "webmaster":
+          console.log("welcome back sir")
+          break;
+        case "leader":
+          console.log("greetings noble leader")
+          break;
+        case "parent":
+          console.log("ah hello parent")
+          break;
+        default:
+          console.log("ermmmm wrong case for switch statement")
+      } 
 
       // Done
       console.log('User Logged In!!');
