@@ -9,26 +9,6 @@ const database = getDatabase();
 
 console.log("login file loaded")
 
-onValue(ref(database, "users/" + user.uid + "/usertype"), (snapshot) => {
-  const data = snapshot.val();
-
-  //determines which portal to send the user to
-  switch(data) {
-    case "webmaster":
-      console.log("welcome back sir")
-      break;
-    case "leader":
-      console.log("greetings noble leader")
-      break;
-    case "parent":
-      console.log("ah hello parent")
-      break;
-    default:
-      console.log("ermmmm wrong case for switch statement")
-  } 
-});
-
-
 //buttons
 const loginButton = document.getElementById("loginButton")
 if (loginButton) {
