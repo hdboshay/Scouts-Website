@@ -87,7 +87,7 @@ function login () {
       
       console.log("user login time recorded")
 
-      onValue(ref(database, "users/" + user.uid), (snapshot) => {
+      onValue(ref(database, "users/" + user.uid + "/usertype"), (snapshot) => {
         const data = snapshot.val();
         console.log(data)
       });
