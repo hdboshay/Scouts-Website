@@ -85,7 +85,9 @@ function login () {
       
       update(ref(database, "users/" + user.uid), user_data);
       
-      onValue(ref(database, "users/" + user.uid + "/usertype"), (snapshot) => {
+      console.log("user login time recorded")
+
+      onValue(ref(database, "users/" + user.uid), (snapshot) => {
         const data = snapshot.val();
         console.log(data)
       });
@@ -103,6 +105,7 @@ function login () {
       
       console.log(error_message);
     })
+    console.log("bottom of function")
 }
 
 function show_message(messagetype) {
