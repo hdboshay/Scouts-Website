@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
-import { getDatabase, ref, update } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js"
+import { getDatabase, ref, update, once } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js"
 import app from "/assets/js/load.js"
 
 // Initialize variables
@@ -77,15 +77,21 @@ function login () {
       console.log("logging in");
       // Declare user variable
       const user = userCredential.user;
-    
+      const databaseRef = ref(database, "users/" + user.uid)
+
       // Create User data
       var user_data = {
         last_login : Date.now()
       }
       
-      update(ref(database, 'users/' + user.uid), user_data);
+      update(databaseRef, user_data);
       
-    
+      once(databaseRef, (data) => {
+        // do some stuff once
+        console.log(data)
+      });
+      
+
       // Done
       console.log('User Logged In!!');
       location.href = 'index.html';
