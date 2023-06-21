@@ -52,7 +52,8 @@ function saveMessage(name, email, subject, message){
     name : name,
     email : email,
     subject : subject,
-    message : message
+    message : message,
+    status : "not seen"
   };
 
   push(messagesRef, message_data);
