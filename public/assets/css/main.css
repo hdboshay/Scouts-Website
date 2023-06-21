@@ -2016,6 +2016,19 @@ input:checked + .slider:before {
 }
 
 
+.message-read-btn {
+  padding: 8px 20px;
+  background: var(--color-primary);
+  color: #fff;
+  border-radius: 50px;
+  transition: 0.3s;
+}
+
+.message-read-btn:hover {
+  background: #25282b;
+}
+
+
 
 /*--------------------------------------------------------------
 # Footer
