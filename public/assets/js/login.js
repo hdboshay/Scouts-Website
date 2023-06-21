@@ -91,12 +91,15 @@ function login () {
         switch(data) {
           case "webmaster":
             console.log("welcome back sir")
+            location.href = 'webmaster-portal.html';
             break;
           case "leader":
             console.log("greetings noble leader")
+            location.href = 'leader-portal.html';
             break;
           case "parent":
             console.log("ah hello parent")
+            location.href = 'parent-portal.html';
             break;
           default:
             console.log("ermmmm wrong case for switch statement")
@@ -105,7 +108,6 @@ function login () {
 
       // Done
       console.log('User Logged In!!');
-      //location.href = 'index.html';
     })
     .catch(function(error) {
       // Firebase will use this to alert of its errors
