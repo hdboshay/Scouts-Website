@@ -25,7 +25,7 @@ function addMessage() {
 
     var ul = document.getElementById("messageList");
     var li = document.createElement("li");
-    li.append("<strong>new message</strong>");
+    li.append('<div>SomeDiv</div>');
     ul.appendChild(li);
 
     console.log("message added")
