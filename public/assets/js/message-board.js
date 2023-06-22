@@ -22,7 +22,7 @@ if (message_read) {
 }
 
 console.log("message-board file loaded")
-
+addMessage()
 
 
 
