@@ -14,6 +14,13 @@ if (addmessage) {
     });
 }
 
+const message_read = document.getElementById("message-read")
+if (message_read) {
+    message_read.addEventListener('click', function(event){
+        console.log("message read button hehehehe")
+    });
+}
+
 console.log("message-board file loaded")
 
 
