@@ -36,7 +36,7 @@ function addMessage() {
 
     console.log(message_data.status)
 
-    li.append(createMessage());
+    li.append(createMessage(message_data));
     ul.appendChild(li);
 
     console.log("message added")
