@@ -34,7 +34,7 @@ function addMessage() {
 function createMessage() {
     var message = document.createElement("div")
 
-    let messageHtml = '<div class="col-xl-12 col-md-6 message-item">' +
+    var messageHtml = '<div class="col-xl-12 col-md-6 message-item">' +
         '<div class="portfolio1-wrap">' +
             '<div class="portfolio1-info">' +
                 '<div class="message-item-info">' +
@@ -48,7 +48,7 @@ function createMessage() {
                 '</div>' +
             '</div>' +
         '</div>'  +
-    '</div><!-- End Message Item -->' +
+    '</div><!-- End Message Item -->'
     message.innerHTML(messageHtml);
 
     console.log(message)
