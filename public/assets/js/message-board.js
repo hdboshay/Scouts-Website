@@ -9,6 +9,8 @@ const database = getDatabase();
 const addmessage = document.getElementById("addmessage")
 if (addmessage) {
     addmessage.addEventListener('click', function(event){
+        event.preventDefault()
+        console.log("message yes")
         addMessage()
     });
 }
