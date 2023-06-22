@@ -16,6 +16,7 @@ if (addmessage) {
 
 console.log("message-board file loaded")
 addMessage()
+retrieveMessages()
 
 
 
@@ -69,6 +70,6 @@ function retrieveMessages() {
         console.log(data)
         data.forEach(element => {
             console.log(element)
-        });
+            });
         });
 }
