@@ -25,8 +25,33 @@ function addMessage() {
 
     var ul = document.getElementById("messageList");
     var li = document.createElement("li");
-    li.append('<div>SomeDiv</div>');
+    li.append(createMessage());
     ul.appendChild(li);
 
     console.log("message added")
+}
+
+function createMessage() {
+    var message = document.createElement("div")
+
+    messageHtml = '<div class="col-xl-12 col-md-6 message-item">' +
+        '<div class="portfolio1-wrap">' +
+            '<div class="portfolio1-info">' +
+                '<div class="message-item-info">' +
+                    '<p><strong>placeholder subjectasdasdasdasd</strong></p>' +
+                    '<p>placeholder name</p>' +
+                    '<p>placeholder email</p>' +
+                    '<p class="message-item-message">placeholder mesage</p>' +
+                '</div>' +
+                '<div class="message-read">' +
+                    '<button id="message-read" class="message-read-btn">message read</button>' +
+                '</div>' +
+            '</div>' +
+        '</div>'  +
+    '</div><!-- End Message Item -->' +
+    message.innerHTML(messageHtml);
+
+    console.log(message)
+
+    return message
 }

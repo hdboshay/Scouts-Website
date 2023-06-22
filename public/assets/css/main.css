@@ -2028,6 +2028,22 @@ input:checked + .slider:before {
   background: #25282b;
 }
 
+.message-item {
+  margin-bottom: 20px;
+}
+
+.message-item-info {
+  text-align: center;
+}
+
+.message-item-message {
+  text-align: left;
+}
+
+.message-read {
+  text-align: right;
+}
+
 
 
 /*--------------------------------------------------------------
