@@ -6,12 +6,11 @@ import app from "/assets/js/load.js"
 const database = getDatabase();
 
 //buttons
-const addmessage = document.getElementById("addmessage")
+const addmessage = document.getElementById("loginButton")
 if (addmessage) {
     addmessage.addEventListener('click', function(event){
-        event.preventDefault()
         console.log("message yes")
-        addMessage()
+        //addMessage()
     });
 }
 
