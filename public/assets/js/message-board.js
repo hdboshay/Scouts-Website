@@ -65,9 +65,11 @@ function createMessage(message_data) {
 }
 
 function retrieveMessages() {
+    console.log("in function")
     onValue(ref(database, "messages/"), (snapshot) => {
         const data = snapshot.val();
-        console.log(data)
+        console.log("got value")
+        //console.log(data)
         data.forEach(element => {
             console.log(element)
             });
