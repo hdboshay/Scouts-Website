@@ -6,63 +6,6 @@
       "**/.*",
       "**/node_modules/**"
     ],
-    "cleanUrls" : false,
-
-    "rewrites": [{
-      "source": "/Beavers",
-      "destination": "/beavers.html"
-    } , {
-      "source": "/beavers",
-      "destination": "/beavers.html"
-    },
-    {
-      "source": "/Cubs",
-      "destination": "/cubs.html"
-    } , {
-      "source": "/cubs",
-      "destination": "/cubs.html"
-    },
-    {
-      "source": "/Scouts",
-      "destination": "/scouts.html"
-    } , {
-      "source": "/scouts",
-      "destination": "/scouts.html"
-    },
-    {
-      "source": "/Senior Scouts",
-      "destination": "/senior-scouts.html"
-    } , {
-      "source": "/senior scouts",
-      "destination": "/senior-scouts.html"
-    },
-    {
-      "source": "/Rovers",
-      "destination": "/rovers.html"
-    } , {
-      "source": "/rovers",
-      "destination": "/rovers.html"
-    },
-    {
-      "source": "/login",
-      "destination": "/login-page.html"
-    } , {
-      "source": "/Login",
-      "destination": "/login-page.html"
-    },
-    {
-      "source": "/register",
-      "destination": "/register-page.html"
-    } , {
-      "source": "/Register",
-      "destination": "/register-page.html"
-    },
-    {
-      "source": "/Files",
-      "destination": "/files.html"
-    } , {
-      "source": "/files",
-      "destination": "/files.html"
-    }]
+    "cleanUrls" : false
   }
 }
