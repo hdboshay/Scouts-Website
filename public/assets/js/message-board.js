@@ -25,6 +25,17 @@ function addMessage() {
 
     var ul = document.getElementById("messageList");
     var li = document.createElement("li");
+
+    var message_data = {
+        name : "",
+        email : "",
+        subject : "",
+        message : "",
+        status : "not seen"
+        };
+
+    console.log(message_data.status)
+
     li.append(createMessage());
     ul.appendChild(li);
 
