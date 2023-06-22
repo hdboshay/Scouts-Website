@@ -5,4 +5,27 @@ import app from "/assets/js/load.js"
 // Initialize variables
 const database = getDatabase();
 
+//buttons
+const addmessage = document.getElementById("addmessage")
+if (addmessage) {
+    addmessage.addEventListener('click', function(event){
+        addMessage()
+    });
+}
+
 console.log("message-board file loaded")
+
+
+
+
+
+
+function addMessage() {
+
+    var ul = document.getElementById("messagelist");
+    var li = document.createElement("li");
+    li.appendChild(document.createTextNode("new message"));
+    ul.appendChild(li);
+
+    console.log("message added")
+}
