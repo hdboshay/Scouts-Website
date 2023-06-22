@@ -23,7 +23,7 @@ console.log("message-board file loaded")
 
 function addMessage() {
 
-    var ul = document.getElementById("messagelist");
+    var ul = document.getElementById("messageList");
     var li = document.createElement("li");
     li.appendChild(document.createTextNode("new message"));
     ul.appendChild(li);
