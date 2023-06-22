@@ -49,7 +49,7 @@ function createMessage() {
             '</div>' +
         '</div>'  +
     '</div><!-- End Message Item -->'
-    message.innerHTML(messageHtml);
+    message.innerHTML = messageHtml;
 
     console.log(message)
 
