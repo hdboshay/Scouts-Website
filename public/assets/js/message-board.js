@@ -27,10 +27,10 @@ function addMessage() {
     var li = document.createElement("li");
 
     var message_data = {
-        name : "",
-        email : "",
-        subject : "",
-        message : "",
+        name : "testy",
+        email : "@@@@@",
+        subject : "funnyyyyyyy",
+        message : "YEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEET",
         status : "not seen"
         };
 
@@ -42,17 +42,17 @@ function addMessage() {
     console.log("message added")
 }
 
-function createMessage() {
+function createMessage(message_data) {
     var message = document.createElement("div")
 
     var messageHtml = '<div class="col-xl-12 col-md-6 message-item">' +
         '<div class="portfolio1-wrap">' +
             '<div class="portfolio1-info">' +
                 '<div class="message-item-info">' +
-                    '<p><strong>placeholder subjectasdasdasdasd</strong></p>' +
-                    '<p>placeholder name</p>' +
-                    '<p>placeholder email</p>' +
-                    '<p class="message-item-message">placeholder mesage</p>' +
+                    '<p><strong>' + message_data.subject + '</strong></p>' +
+                    '<p>' + message_data.name + '</p>' +
+                    '<p>' + message_data.email + '</p>' +
+                    '<p class="message-item-message">' + message_data.message + '</p>' +
                 '</div>' +
                 '<div class="message-read">' +
                     '<button id="message-read" class="message-read-btn">message read</button>' +
