@@ -6,3 +6,5 @@ import app from "/assets/js/load.js"
 const database = getDatabase();
 
 console.log("message-board file loaded")
+
+//testing to see if updates work
