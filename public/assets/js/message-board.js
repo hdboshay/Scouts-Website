@@ -34,8 +34,6 @@ function addMessage() {
         status : "not seen"
         };
 
-    console.log(message_data.status)
-
     li.append(createMessage(message_data));
     ul.appendChild(li);
 
@@ -62,7 +60,15 @@ function createMessage(message_data) {
     '</div><!-- End Message Item -->'
     message.innerHTML = messageHtml;
 
-    console.log(message)
-
     return message
+}
+
+function retrieveMessages() {
+    onValue(ref(database, "messages/"), (snapshot) => {
+        const data = snapshot.val();
+        console.log(data)
+        data.forEach(element => {
+            console.log(element)
+        });
+        });
 }
