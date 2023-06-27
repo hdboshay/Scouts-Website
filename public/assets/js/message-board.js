@@ -1,5 +1,5 @@
 // Import the functions you need from the SDKs you need
-import { getDatabase, ref, onValue, child } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js"
+import { getDatabase, ref, onValue, child, get } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js"
 import app from "/assets/js/load.js"
 
 // Initialize variables
@@ -66,7 +66,7 @@ function createMessage(message_data) {
 
 function retrieveMessages() {
     console.log("in function")
-    const dbRef = ref(getDatabase());
+    const dbRef = ref(database);
     get(child(dbRef, "messages/"  )).then((snapshot) => {
         if (snapshot.exists()) {
             console.table(snapshot.val());
