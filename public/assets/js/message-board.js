@@ -74,6 +74,6 @@ function retrieveMessages() {
             console.log("No data available");
         }
         }).catch((error) => {
-        console.error(error);
+        console.log(error);
         });
 }
