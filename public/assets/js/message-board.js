@@ -69,7 +69,7 @@ function retrieveMessages() {
     const dbRef = ref(database);
     get(child(dbRef, "messages/"  )).then((snapshot) => {
         if (snapshot.exists()) {
-            console.table(snapshot.val());
+            console.log(snapshot.val());
         } else {
             console.log("No data available");
         }
