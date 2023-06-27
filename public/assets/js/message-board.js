@@ -67,7 +67,5 @@ function createMessage(message_data) {
 function retrieveMessages() {
     console.log("in function")
     const messageRef = ref(database, "messages/");
-    onValue(messageRef, (snapshot) => {
-        
-        });
+    onValue(messageRef);
 }
