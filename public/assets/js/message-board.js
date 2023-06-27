@@ -1,5 +1,5 @@
 // Import the functions you need from the SDKs you need
-import { getDatabase, ref, onValue, child, get } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js"
+import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js"
 import app from "/assets/js/load.js"
 
 // Initialize variables
@@ -67,18 +67,12 @@ function createMessage(message_data) {
 function retrieveMessages() {
     console.log("in function")
     const messageRef = ref(database, "messages/");
-    onValue(messageRef).then((snapshot) => {
+    onValue(messageRef), (snapshot) => {
         if (snapshot.exists()) {
             //console.log(snapshot.val());
             console.log("message found ye ye");
         } else {
             console.log("No data available");
         }
-        }).catch(function(error) {
-            // Firebase will use this to alert of its errors
-            var error_code = error.code;
-            var error_message = error.message;
-            
-            console.log("error: " + error_message + " " + error_code);
-        });
+        };
 }
