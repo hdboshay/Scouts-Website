@@ -66,7 +66,7 @@ function createMessage(message_data) {
 
 function retrieveMessages() {
     console.log("in function")
-    const messageRef = database.child("messages");
+    const messageRef = child(database, "messages");
     onValue(messageRef).then((snapshot) => {
         if (snapshot.exists()) {
             console.log(snapshot.email.val());
