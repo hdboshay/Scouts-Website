@@ -73,7 +73,12 @@ function retrieveMessages() {
         } else {
             console.log("No data available");
         }
-        }).catch((error) => {
-        console.log(error);
+        }).catch(function(error) {
+            // Firebase will use this to alert of its errors
+            var error_code = error.code;
+            var error_message = error.message;
+            show_message("error-message")
+            
+            console.log(error_message);
         });
 }
