@@ -16,13 +16,13 @@ if (addmessage) {
 
 console.log("message-board file loaded")
 addMessage()
-retrieveMessages()
 
 
 
 
 
 function addMessage() {
+    retrieveMessages()
 
     var ul = document.getElementById("messageList");
     var li = document.createElement("li");
