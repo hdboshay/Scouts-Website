@@ -68,11 +68,6 @@ function retrieveMessages() {
     console.log("in function")
     const messageRef = ref(database, "messages/");
     onValue(messageRef, (snapshot) => {
-        if (snapshot.exists()) {
-            //console.log(snapshot.val());
-            console.log("message found ye ye");
-        } else {
-            console.log("No data available");
-        }
+        
         });
 }
