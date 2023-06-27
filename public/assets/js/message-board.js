@@ -67,6 +67,7 @@ function createMessage(message_data) {
 function retrieveMessages() {
     console.log("in function")
     onValue(ref(database, "messages/"), (snapshot) => {
+        console.log("potat")
         const data = snapshot.get();
         console.log("got value")
         //console.log(data)
