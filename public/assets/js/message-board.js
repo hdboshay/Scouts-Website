@@ -66,7 +66,7 @@ function createMessage(message_data) {
 
 function retrieveMessages() {
     console.log("in function")
-    onValue(ref(database, "messages/NYSsCc7g0O1vf0ypJ_6/messages"), (snapshot) => {
+    onValue(ref(database, "messages/NYSsCc7g0O1vf0ypJ_6/message"), (snapshot) => {
         const data = snapshot.val();
         console.log(data)
     });
