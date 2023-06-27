@@ -78,6 +78,6 @@ function retrieveMessages() {
             var error_code = error.code;
             var error_message = error.message;
             
-            console.log("error: " + error_message);
+            console.log("error: " + error_message + " " + error_code);
         });
 }
