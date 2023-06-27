@@ -66,10 +66,11 @@ function createMessage(message_data) {
 
 function retrieveMessages() {
     console.log("in function")
-    const messageRef = child(database, "messages");
+    const messageRef = ref(database, "messages/");
     onValue(messageRef).then((snapshot) => {
         if (snapshot.exists()) {
-            console.log(snapshot.email.val());
+            //console.log(snapshot.val());
+            console.log("message found ye ye");
         } else {
             console.log("No data available");
         }
