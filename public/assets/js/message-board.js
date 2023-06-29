@@ -68,7 +68,7 @@ function retrieveMessages() {
     console.log("in function")
     const messageRef = ref(database, "messages/");
 
-    get(child(messageRef, "messages/")).then((snapshot) => {
+    onValue(messageRef, (snapshot) => {
             if (snapshot.exists()) {
             console.log(snapshot.val());
             } else {
