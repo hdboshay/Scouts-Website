@@ -41,8 +41,6 @@ function saveMessage(name, email, subject, message){
   // Reference messages collection
   var messagesRef = ref(database, 'messages/');
   var date = new Date()
-  var readable_date = `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`
-  console.debug(readable_date)
 
   // Create Message data
   var message_data = {
@@ -51,7 +49,7 @@ function saveMessage(name, email, subject, message){
     subject : subject,
     message : message,
     status : "not seen",
-    date_submitted : readable_date
+    date_submitted : `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`
   };
 
   push(messagesRef, message_data);
