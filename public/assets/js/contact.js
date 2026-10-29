@@ -5,8 +5,6 @@ import app from "/assets/js/load.js"
 // Initialize variables
 const database = getDatabase();
 
-console.log("contact file loaded")
-
 const contactButton = document.getElementById("contactButton")
 if (contactButton) {
   contactButton.addEventListener('click', function(event){
@@ -17,26 +15,22 @@ if (contactButton) {
 
 // Submit form
 function submitForm(){
-  console.log("in function")
   //Get value
   let name = document.getElementById('name').value;
   let email = document.getElementById('email').value;
   let subject = document.getElementById('subject').value;
   let message = document.getElementById('message').value;
 
-  console.log(name, email, subject, message);
-  console.log(check_fields(name, email, subject, message));
-
   if (check_fields(name, email, subject, message)) {
     // Save message
     saveMessage(name, email, subject, message);
-    console.log("message saved")
 
     // Show alert
-    alert("Message Submitted.\nIf you do not hear back within 1-2 weeks, try dropping our Group Scout Master an email!" + Date.now())
+    alert("Message Submitted.\nIf you do not hear back within 1-2 weeks, try dropping our Group Scout Master an email!")
+    
     
     // Clear form
-    document.getElementById('contactForm').reset();
+    //document.getElementById('contactForm').reset();
   } else {
     alert("One or more of the fields was empty");
   }
@@ -46,6 +40,8 @@ function submitForm(){
 function saveMessage(name, email, subject, message){
   // Reference messages collection
   var messagesRef = ref(database, 'messages/');
+  const date = Date.now()
+  var readable_date = `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`
 
   // Create Message data
   var message_data = {
@@ -54,7 +50,7 @@ function saveMessage(name, email, subject, message){
     subject : subject,
     message : message,
     status : "not seen",
-    date_submitted : Date.now()
+    date_submitted : readable_date
   };
 
   push(messagesRef, message_data);
