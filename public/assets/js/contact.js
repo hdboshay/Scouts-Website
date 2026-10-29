@@ -33,7 +33,7 @@ function submitForm(){
     console.log("message saved")
 
     // Show alert
-    alert("message sent")
+    alert("Message Submitted.\nIf you do not hear back within 1-2 weeks, try dropping our Group Scout Master an email!" + Date.now())
     
     // Clear form
     document.getElementById('contactForm').reset();
