@@ -15,6 +15,9 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+console.debug(process.env.SMTP_USER)
+console.debug("working?")
+
 // Initialize variables
 const database = getDatabase();
 
