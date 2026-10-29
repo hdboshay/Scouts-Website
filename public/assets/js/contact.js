@@ -40,8 +40,9 @@ function submitForm(){
 function saveMessage(name, email, subject, message){
   // Reference messages collection
   var messagesRef = ref(database, 'messages/');
-  const date = Date.now()
+  var date = Date.now()
   var readable_date = `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`
+  console.debug(readable_date)
 
   // Create Message data
   var message_data = {
