@@ -1,10 +1,10 @@
 // Import the functions you need from the SDKs you need
 import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js"
 console.debug("db suc")
-const nodemailer = require('nodemailer');
-console.debug("node suc")
-const functions = require('firebase-functions');
+import { functions } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-functions.js"
 console.debug("fnc suc")
+//const nodemailer = require('nodemailer');
+//console.debug("node suc")
 import app from "/assets/js/load.js";
 
 console.debug("finished imports")
