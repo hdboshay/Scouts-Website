@@ -53,7 +53,8 @@ function saveMessage(name, email, subject, message){
     email : email,
     subject : subject,
     message : message,
-    status : "not seen"
+    status : "not seen",
+    date_submitted : Date.now()
   };
 
   push(messagesRef, message_data);
