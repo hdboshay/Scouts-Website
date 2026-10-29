@@ -3,7 +3,7 @@ import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/9.22.
 console.debug("db suc")
 const nodemailer = require('nodemailer');
 console.debug("node suc")
-import { functions } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-functions.js";
+const functions = require('firebase-functions');
 console.debug("fnc suc")
 import app from "/assets/js/load.js";
 
