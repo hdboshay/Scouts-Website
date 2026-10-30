@@ -1,11 +1,13 @@
 // Import the functions you need from the SDKs you need
 import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js"
 console.debug("db suc")
-import { functions } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-functions.js"
-console.debug("fnc suc")
 //const nodemailer = require('nodemailer');
 //console.debug("node suc")
 import app from "/assets/js/load.js";
+console.debug("app init")
+
+import adminApp from "../../../functions/email";
+console.debug("admin init")
 
 console.debug("finished imports")
 // Create a transporter using SMTP
