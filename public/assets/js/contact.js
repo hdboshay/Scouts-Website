@@ -13,6 +13,11 @@ if (contactButton) {
   contactButton.addEventListener('click', function(event){
     event.preventDefault()
     submitForm()
+    const fnc = firebase.functions().httpsCallable('sayHello');
+      // call the function and pass data
+      sayHello({ name: 'Shaun' }).then(result => {
+        console.log(result.data);
+      });
   });
 }
 
