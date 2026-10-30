@@ -6,63 +6,89 @@
       "**/.*",
       "**/node_modules/**"
     ],
-    "cleanUrls" : true,
-
-    "rewrites": [{
-      "source": "/Beavers",
-      "destination": "/beavers-page.html"
-    } , {
-      "source": "/beavers",
-      "destination": "/beavers-page.html"
-    },
+    "cleanUrls": true,
+    "rewrites": [
+      {
+        "source": "/Beavers",
+        "destination": "/beavers-page.html"
+      },
+      {
+        "source": "/beavers",
+        "destination": "/beavers-page.html"
+      },
+      {
+        "source": "/Cubs",
+        "destination": "/cubs-page.html"
+      },
+      {
+        "source": "/cubs",
+        "destination": "/cubs-page.html"
+      },
+      {
+        "source": "/Scouts",
+        "destination": "/scouts-page.html"
+      },
+      {
+        "source": "/scouts",
+        "destination": "/scouts-page.html"
+      },
+      {
+        "source": "/Senior Scouts",
+        "destination": "/senior-scouts-page.html"
+      },
+      {
+        "source": "/senior scouts",
+        "destination": "/senior-scouts-page.html"
+      },
+      {
+        "source": "/Rovers",
+        "destination": "/rovers-page.html"
+      },
+      {
+        "source": "/rovers",
+        "destination": "/rovers-page.html"
+      },
+      {
+        "source": "/login",
+        "destination": "/login-page.html"
+      },
+      {
+        "source": "/Login",
+        "destination": "/login-page.html"
+      },
+      {
+        "source": "/register",
+        "destination": "/register-page.html"
+      },
+      {
+        "source": "/Register",
+        "destination": "/register-page.html"
+      },
+      {
+        "source": "/Files",
+        "destination": "/files.html"
+      },
+      {
+        "source": "/files",
+        "destination": "/files.html"
+      }
+    ]
+  },
+  "functions": [
     {
-      "source": "/Cubs",
-      "destination": "/cubs-page.html"
-    } , {
-      "source": "/cubs",
-      "destination": "/cubs-page.html"
-    },
-    {
-      "source": "/Scouts",
-      "destination": "/scouts-page.html"
-    } , {
-      "source": "/scouts",
-      "destination": "/scouts-page.html"
-    },
-    {
-      "source": "/Senior Scouts",
-      "destination": "/senior-scouts-page.html"
-    } , {
-      "source": "/senior scouts",
-      "destination": "/senior-scouts-page.html"
-    },
-    {
-      "source": "/Rovers",
-      "destination": "/rovers-page.html"
-    } , {
-      "source": "/rovers",
-      "destination": "/rovers-page.html"
-    },
-    {
-      "source": "/login",
-      "destination": "/login-page.html"
-    } , {
-      "source": "/Login",
-      "destination": "/login-page.html"
-    },
-    {
-      "source": "/register",
-      "destination": "/register-page.html"
-    } , {
-      "source": "/Register",
-      "destination": "/register-page.html"
-    },
-    {
-      "source": "/Files",
-      "destination": "/files.html"
-    } , {
-      "source": "/files",
-      "destination": "/files.html"
-    }]
-  }
+      "source": "functions",
+      "codebase": "default",
+      "disallowLegacyRuntimeConfig": true,
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log",
+        "*.local"
+      ],
+      "predeploy": [
+        "npm --prefix \"$RESOURCE_DIR\" run lint"
+      ]
+    }
+  ]
 }
