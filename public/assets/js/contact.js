@@ -2,7 +2,7 @@
 import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js"
 console.debug("db suc")
 
-import app from "../../../functions/load.js";
+import app from "./load.js";
 console.debug("app init")
 
 // Initialize variables
