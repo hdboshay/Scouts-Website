@@ -6,7 +6,7 @@ console.debug("db suc")
 import app from "/assets/js/load.js";
 console.debug("app init")
 
-import adminApp from "../../../functions/email";
+import adminApp from "../../../functions/email.js";
 console.debug("admin init")
 
 console.debug("finished imports")
