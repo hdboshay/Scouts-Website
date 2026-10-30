@@ -1,31 +1,8 @@
 // Import the functions you need from the SDKs you need
 import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js"
 console.debug("db suc")
-//const nodemailer = require('nodemailer');
-//console.debug("node suc")
-import app from "/assets/js/load.js";
-console.debug("app init")
-
-//import sendEmail from "../../../functions/email.js";
-//console.debug("sendemails import")
-
-//import adminApp from "../../../functions/email.js";
-//console.debug("admin init")
 
 console.debug("finished imports")
-// Create a transporter using SMTP
-//const transporter = nodemailer.createTransport({
-//  host: "smtp.gmail.com",
-//  port: 587,
-//  secure: false, // use STARTTLS (upgrade connection to TLS after connecting)
-//  auth: {
-//   user: process.env.SMTP_USER,
-//    pass: process.env.SMTP_PASS,
-//  },
-//});
-
-console.debug(process.env.SMTP_USER)
-console.debug("working?")
 
 // Initialize variables
 const database = getDatabase();
