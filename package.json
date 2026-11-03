@@ -1,0 +1,18 @@
+{
+  "name": "scouts-website",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/hdboshay/Scouts-Website#readme",
+  "bugs": {
+    "url": "https://github.com/hdboshay/Scouts-Website/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hdboshay/Scouts-Website.git"
+  },
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
