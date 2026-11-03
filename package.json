@@ -13,9 +13,7 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "dependencies": {
-    "firebase-tools": "^15.34.2"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "echo 'need to work out what this does'"
   }
 }

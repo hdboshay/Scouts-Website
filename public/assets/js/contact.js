@@ -4,6 +4,7 @@ console.debug("db suc");
 
 import app from "./load.js"
 console.debug("app init");
+console.log(process.env.FIREBASE_CONFIG)
 
 // Initialize variables
 const database = getDatabase();
