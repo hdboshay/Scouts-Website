@@ -20,8 +20,7 @@ function submitForm(){
     saveMessage(name, email, subject, message);
 
     // Show alert
-    alert("Message Submitted.\nIf you do not hear back within 1-2 weeks, try dropping our Group Scout Master an email!")
-    
+    alert("Message Submitted!")
     
     // Clear form
     document.getElementById('contactForm').reset();
