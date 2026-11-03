@@ -1,23 +1,18 @@
 // Import the functions you need from the SDKs you need
 import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js"
-console.debug("db suc")
+console.debug("db suc");
 
-import app from "./load.js";
-console.debug("app init")
+import app from "./load.js"
+console.debug("app init");
 
 // Initialize variables
 const database = getDatabase();
 
-const contactButton = document.getElementById("contactButton")
+const contactButton = document.getElementById("contactButton");
 if (contactButton) {
   contactButton.addEventListener('click', function(event){
     event.preventDefault()
     submitForm()
-    const fnc = firebase.functions().httpsCallable('sayHello');
-      // call the function and pass data
-      sayHello({ name: 'Shaun' }).then(result => {
-        console.log(result.data);
-      });
   });
 }
 
@@ -38,7 +33,7 @@ function submitForm(){
     
     
     // Clear form
-    //document.getElementById('contactForm').reset();
+    document.getElementById('contactForm').reset();
   } else {
     alert("One or more of the fields was empty");
   }
@@ -46,21 +41,19 @@ function submitForm(){
 
 // Save message to firebase
 function saveMessage(name, email, subject, message){
-  // Reference messages collection
-  var messagesRef = ref(database, 'messages/');
-  var date = new Date()
-
   // Create Message data
   var message_data = {
     name : name,
     email : email,
     subject : subject,
-    message : message,
-    status : "not seen",
-    date_submitted : `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`
+    message : message
   };
 
-  push(messagesRef, message_data);
+  const sendEmail = firebase.functions().httpsCallable('sendEmail');
+    // call the function and pass data
+    sendEmail(message_data).then(result => {
+      console.log(result.data);
+    });
 }
 
 function check_fields(name, email, subject, message) {

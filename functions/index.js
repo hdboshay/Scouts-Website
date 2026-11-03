@@ -1,19 +1,41 @@
-const functions = require("firebase-functions");
+const {onCall} = require("firebase-functions/v2/https");
+const admin = require("firebase-admin");
+const nodemailer  = require("nodemailer");
 
-// http request 1
-exports.randomNumber = functions.https.onRequest((request, response) => {
-  const number = Math.round(Math.random() * 100);
-  console.log(number);
-  response.send(number.toString());
-});
+admin.initializeApp();
 
-// http request 2
-exports.toTheDojo = functions.https.onRequest((request, response) => {
-  response.redirect("https://www.thenetninja.co.uk");
-});
 
 // http callable function
-exports.sayHello = functions.https.onCall((data, context) => {
-  // const _name = data.name;
-  return "hello ${data.name} :)";
-});
+exports.sendEmail = onCall(
+    {secrets: ["NODEMAILER_CONFIG"]},
+    (data, context) => {
+      const nodemailerConfig = JSON.parse(process.env.NODEMAILER_CONFIG);
+      const form_data = data.data;
+
+      let transporter = nodemailer.createTransport({
+        host: nodemailerConfig.host,
+        port: nodemailerConfig.port,
+        secure: true,
+        auth: {
+            user: nodemailerConfig.username,
+            pass: nodemailerConfig.password
+        }
+      });
+
+      let mailOptions = {
+        from: nodemailerConfig.from_email,
+        to: `${nodemailerConfig.to_email}`,
+        subject: `1DS Website enquiry - ${form_data.subject}`,
+        html: 
+          `<body>
+            <p>Enquiry : ${form_data.message}</p>
+            <p>From : ${form_data.name}</p>
+            <p>Contact Email : ${form_data.email}</p>
+          </body>`
+      }
+
+      return transporter.sendMail(mailOptions)
+        .catch((err)=>{
+          console.log("\n\n",err)
+        });
+    });
