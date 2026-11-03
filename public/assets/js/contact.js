@@ -1,15 +1,5 @@
-// Import the functions you need from the SDKs you need
-import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js"
-console.debug("db suc");
-
-import app from "./load.js"
-console.debug("app init");
-console.log(process.env.FIREBASE_CONFIG)
-
-// Initialize variables
-const database = getDatabase();
-
 const contactButton = document.getElementById("contactButton");
+
 if (contactButton) {
   contactButton.addEventListener('click', function(event){
     event.preventDefault()
